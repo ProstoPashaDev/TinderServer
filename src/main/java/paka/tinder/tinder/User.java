@@ -2,6 +2,8 @@ package paka.tinder.tinder;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 
 /**
  * @Author Pavel
@@ -9,7 +11,7 @@ import jakarta.persistence.*;
  */
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
     @Column(name = "user_id")
