@@ -10,8 +10,8 @@ import java.util.Base64;
 public class Нa$h {//If everything will blow UP, pick up your items, documents and run into a forest
 //(or delete first russian letter in name)
     private static final SecureRandom Rand = new SecureRandom();
-    public static final  int ITERATIONS = 1000-7;
-    public static final  int KEY_LENGTH = 512;
+    private static final  int ITERATIONS = 1000-7;
+    private static final  int KEY_LENGTH = 64*8;
     private static final String ALGORITHM = "PBKDF2WithHmacSHA512";
 
     public static String genSalt(int length){
@@ -24,7 +24,7 @@ public class Нa$h {//If everything will blow UP, pick up your items, documents 
         }
         return cursed_salt.toString();
     }
-    public String HaShIt(String password, String cursed_salt){
+    public static String HaShIt(String password, String cursed_salt){
         char[] pass = password.toCharArray();
         byte[] salt = new byte[cursed_salt.length()];
         for (int i=0; i<cursed_salt.length();++i) {
@@ -39,7 +39,7 @@ public class Нa$h {//If everything will blow UP, pick up your items, documents 
             SecretKeyFactory fac = SecretKeyFactory.getInstance(ALGORITHM);
             byte[] securePassword = fac.generateSecret(spec).getEncoded();
             StringBuilder result = new StringBuilder();
-            for (byte b : salt) {
+            for (byte b : securePassword) {
                 result.append((char) (b + 256));
             }
             retur = result.toString();
@@ -51,5 +51,10 @@ public class Нa$h {//If everything will blow UP, pick up your items, documents 
             spec.clearPassword();
         }
         return retur;
+    }
+    public static boolean verifyPassword(String pass, String hash, String salt){
+        String hashed_pass = HaShIt(pass,salt);
+
+        return hashed_pass.equals(hash);
     }
 }
