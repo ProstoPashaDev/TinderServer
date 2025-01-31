@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import paka.tinder.tinder.User;
 
 public class UserDAO {
-    private Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+    private final Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
 
     public void insertUser(User user) {
         session.beginTransaction();
