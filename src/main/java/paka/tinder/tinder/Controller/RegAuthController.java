@@ -15,12 +15,14 @@ import java.util.Map;
 @RestController
 public class RegAuthController {
 
+    SecureDataTransferServerService sdtService = new SecureDataTransferServerService();
+
     @PostMapping(value = "/getPublicKey")
-    public ResponseEntity<Map<Integer, byte[]>> getPubicKeyFromClient(@RequestBody Map<Integer, byte[]> pairKeyIndexClient) {
-        //PublicKey is given via byte[] because of problem with translating PublicKey into httpRequest
-        SecureDataTransferServerService sdtService = new SecureDataTransferServerService();
+    public ResponseEntity<Integer> getPubicKeyFromClient(@RequestBody String publicKeyClient) {
+        //PublicKey is given via byte[], converted to String, because of problem with directly sending PublicKey
         try {
-            return new ResponseEntity<>(sdtService.getPublicKeyFromClient(pairKeyIndexClient), HttpStatus.ACCEPTED);
+            //Return index of exact billCipher object
+            return new ResponseEntity<>(sdtService.getPublicKeyFromClient(publicKeyClient), HttpStatus.ACCEPTED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

@@ -1,6 +1,7 @@
 package paka.tinder.tinder.Secure;
 import java.io.*;
 import java.security.*;
+import java.util.Arrays;
 import javax.crypto.*;
 
 import jakarta.xml.bind.DatatypeConverter;
@@ -13,6 +14,10 @@ public class BillCipher {
     private static final int MAX_MESSAGE_SIZE = KEY_SIZE-11;
     private PrivateKey privateKey;
     private PublicKey publicKey;
+
+    public PublicKey getPublicKey() {
+        return publicKey;
+    }
 
     public BillCipher(){
     }
@@ -58,7 +63,7 @@ public class BillCipher {
         } catch (NoSuchAlgorithmException | IllegalBlockSizeException | NoSuchPaddingException | InvalidKeyException |
                  BadPaddingException | IOException | ShortBufferException e) {
             System.out.println(e.getLocalizedMessage());
-            System.out.println(e);
+            System.out.println(Arrays.toString(e.getStackTrace()));
         }
         return null;
     }
