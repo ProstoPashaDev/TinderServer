@@ -76,6 +76,9 @@ public class BillCipher {
             int size = (uncursed_msg.length+KEY_SIZE-1)/KEY_SIZE;
             byte[] bytes = new byte[size*MAX_MESSAGE_SIZE];
             Cipher cipher = Cipher.getInstance(RSA);
+            System.out.println("-------");
+            System.out.println(privateKey);
+            System.out.println("-------");
             cipher.init(Cipher.DECRYPT_MODE, this.privateKey);
             byte[] temp = new byte[KEY_SIZE];
 
