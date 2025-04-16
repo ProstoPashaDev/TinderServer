@@ -7,7 +7,7 @@ import paka.tinder.tinder.TableClassExample;
 
 /**
  * Class for initializing session
- * We initialize it 1 time, then just reuse it
+ * Singleton
  */
 public class HibernateSessionFactoryUtil {
 

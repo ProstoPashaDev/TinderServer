@@ -2,6 +2,7 @@ package paka.tinder.tinder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import paka.tinder.tinder.Secure.BillCipher;
 
 import java.security.PublicKey;
@@ -11,6 +12,7 @@ import java.util.Timer;
  * Start/main class
  */
 @SpringBootApplication
+@EntityScan("paka.tinder.tinder")
 public class TinderApplication {
 
     public static void main(String[] args) {
