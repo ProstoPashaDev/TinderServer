@@ -13,21 +13,11 @@ import java.io.Serializable;
 @Table(name = "user")
 public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
-    @Column(name = "user_id")
-    private int userId;
+    @Column(name = "email")
     private String email;
     private String password;
 
     //Getters and setters
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
     public String getEmail() {
         return email;
     }
