@@ -1,4 +1,4 @@
-package paka.tinder.tinder;
+package paka.tinder.tinder.Database;
 
 import jakarta.persistence.*;
 
