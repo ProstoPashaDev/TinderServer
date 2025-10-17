@@ -1,6 +1,6 @@
 # 🎓 Innolove – Matchmaking App for Innopolis University
 
-## Description
+## Description (Project in development)
 **Innolove** is a matchmaking application designed for students and staff of **Innopolis University**.  
 The system allows users to create personal profiles, set preferences, and find matches among other members of the university community.  
 The app ensures data privacy and secure authentication while providing a simple, friendly interface similar to **Tinder**.
