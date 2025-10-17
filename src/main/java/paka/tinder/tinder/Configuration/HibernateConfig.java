@@ -20,7 +20,7 @@
 //
 //        // Register your entity classes here
 //        sessionFactoryBean.setAnnotatedClasses(
-//                paka.tinder.tinder.User.class // Add any other entities as needed
+//                paka.tinder.tinder.Database.User.class // Add any other entities as needed
 //        );
 //
 //        return sessionFactoryBean;
