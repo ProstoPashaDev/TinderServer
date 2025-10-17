@@ -5,7 +5,7 @@
 
 <hibernate-configuration>
     <session-factory>
-        <mapping class="paka.tinder.tinder.User"/>
+        <mapping class="paka.tinder.tinder.Database.User"/>
         <property name="hibernate.current_session_context_class">thread</property>
 
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
