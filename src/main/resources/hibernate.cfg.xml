@@ -5,9 +5,12 @@
 
 <hibernate-configuration>
     <session-factory>
+        <mapping class="paka.tinder.tinder.User"/>
+        <property name="hibernate.current_session_context_class">thread</property>
+
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Tinder</property>
-        <property name="hibernate.connection.username">___</property>
-        <property name="hibernate.connection.password">___</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">Kl_1298ughR</property>
     </session-factory>
 </hibernate-configuration>
